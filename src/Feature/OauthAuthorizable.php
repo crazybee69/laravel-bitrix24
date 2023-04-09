@@ -78,7 +78,7 @@ trait OauthAuthorizable
         return new AccessToken(
             Arr::get($oauthData, 'access_token'),
             Arr::get($oauthData, 'refresh_token'),
-            Arr::get($oauthData, 'expires'),
+            (int)Arr::get($oauthData, 'expires'),
         );
     }
 }
