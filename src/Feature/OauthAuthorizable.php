@@ -36,7 +36,7 @@ trait OauthAuthorizable
                 'code' => $code
             ]
         ]);
-        $oauthData = json_decode($response->getBody(), true);
+        $oauthData = json_decode($response->getBody()->getContents(), true);
         $this->saveOauthData($oauthData);
     }
 

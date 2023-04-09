@@ -8,7 +8,7 @@ trait Deal
 {
     public function getDeal(int $id): array
     {
-        return $this->getCoreApiClient()
+        return $this->getApiClient()
             ->call('crm.deal.get', ['ID' => $id])
             ->getResponseData()
             ->getResult();

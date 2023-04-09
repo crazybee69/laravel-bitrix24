@@ -13,9 +13,4 @@ class ApplicationController
     {
         event(new OnAppInstalled());
     }
-
-    public function handle(Request $request)
-    {
-        //@todo handling app webhooks
-    }
 }

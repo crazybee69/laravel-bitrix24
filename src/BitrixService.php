@@ -69,7 +69,7 @@ class BitrixService
             $params = array_merge($params, $additionalParams);
         }
         while (true) {
-            $response = $this->getCoreApiClient()->call($method, $params)->getHttpResponse();
+            $response = $this->getApiClient()->call($method, $params)->getHttpResponse();
             $response = json_decode($response->getContent(), true);
             if ($resultKey === null) {
                 $results[] = $response['result'];
@@ -86,12 +86,12 @@ class BitrixService
         return array_merge([], ...$results);
     }
 
-    protected function getCoreApiClient(): CoreInterface
+    protected function getApiClient(): CoreInterface
     {
         return $this->api()->getMainScope()->main()->core;
     }
 
-    protected function api(): ServiceBuilder
+    private function api(): ServiceBuilder
     {
         if ($this->serviceBuilder === null) {
             $appProfile = new \Bitrix24\SDK\Core\Credentials\ApplicationProfile(

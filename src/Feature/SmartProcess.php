@@ -13,7 +13,7 @@ trait SmartProcess
 
     public function updateSmartProcess(int $smartProcessId, int $id, array $fields): void
     {
-        $this->getCoreApiClient()->call('crm.item.update', [
+        $this->getApiClient()->call('crm.item.update', [
             'id' => $id,
             'entityTypeId' => $smartProcessId,
             'fields' => $fields,

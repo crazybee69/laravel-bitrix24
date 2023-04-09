@@ -5,7 +5,6 @@ use Crazybee47\Laravel\Bitrix24\Http\Controllers\Oauth\AuthController;
 use Illuminate\Support\Facades\Route;
 
 Route::addRoute(['POST', 'GET'], '/install', [ApplicationController::class, 'onAppInstall'])->name('install');
-Route::addRoute(['POST', 'GET'], '/handle', [ApplicationController::class, 'handle'])->name('handle');
 
 Route::group([
     'prefix' => 'oauth',

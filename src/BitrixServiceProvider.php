@@ -39,7 +39,7 @@ class BitrixServiceProvider extends ServiceProvider
             'prefix' => 'bitrix',
             'as' => 'bitrix.',
         ], function () {
-            $this->loadRoutesFrom(__DIR__ . '/../routes/web.php');
+            $this->loadRoutesFrom(__DIR__ . '/../routes/bitrix.php');
         });
     }
 }
