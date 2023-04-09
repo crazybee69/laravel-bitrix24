@@ -1,0 +1,41 @@
+{
+    "name": "crazybee47/laravel-bitrix24",
+    "description": "Laravel wrapper around OAuth2 Bitrix24 Rest API Application",
+    "type": "library",
+    "version": "1.0.0",
+    "require": {
+        "php": "^8.1",
+        "guzzlehttp/guzzle": "^7.5",
+        "mesilov/bitrix24-php-sdk": "2.0-alpha.7",
+        "symfony/event-dispatcher": "^6.2",
+        "illuminate/contracts": "^9.0|^10.0",
+        "illuminate/http": "^9.0|^10.0",
+        "illuminate/support": "^9.0|^10.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Crazybee47\\Laravel\\Bitrix24\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Dmitrii Artemov",
+            "email": "dimochka1994@yandex.ru"
+        }
+    ],
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.x-dev"
+        },
+        "laravel": {
+            "providers": [
+                "Crazybee47\\Laravel\\Bitrix24\\BitrixServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
