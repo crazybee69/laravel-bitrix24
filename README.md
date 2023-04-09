@@ -31,7 +31,7 @@ These credentials should be placed in your application's `config/services.php` c
     'host' => 'https://example.bitrix24.ru',
     'client_id' => env('BITRIX_CLIENT_ID'),
     'client_secret' => env('BITRIX_CLIENT_SECRET'),
-    'scopes' => explode(',', env('BITRIX_SCOPES', 'crm')),
+    'scopes' => explode(',', env('BITRIX_SCOPES', 'crm')),//crm,bizproc,telephony
 ]
 ```
 
