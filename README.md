@@ -42,7 +42,7 @@ These credentials should be placed in your application's `config/services.php` c
 
 ## Setup App actions for Bitrix24
 
-If you need to install webhooks or application actions for Business Processes, you can listen the event: `Crazybee47\Laravel\Bitrix24\Events\OnAppInstalled`. To do this, register handler for it in your EventServiceProvider:
+If you need to install webhooks or application actions for Business Processes when the application is installed into Bitrix24, you can listen the event: `Crazybee47\Laravel\Bitrix24\Events\OnAppInstalled`. To do this, register handler for it in your EventServiceProvider:
 
 ### Example:
 
