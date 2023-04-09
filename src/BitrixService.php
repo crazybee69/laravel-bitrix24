@@ -26,6 +26,7 @@ class BitrixService
     use SmartProcess;
     use Webhook;
 
+    private const ONAPPINSTALL_EVENT = 'ONAPPINSTALL';
     private const OAUTH_DATA_CACHE_KEY = 'bitrix:oauth-data';
     private const TIMEOUT_BETWEEN_REQUESTS = 500000;
 

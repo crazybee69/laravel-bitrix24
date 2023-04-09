@@ -16,6 +16,12 @@ trait OauthAuthorizable
 {
     public function authorizeRequest(array $request): void
     {
+        $event = $request['event'] ?? null;
+        if ($event === self::ONAPPINSTALL_EVENT) {
+            $authData = $request['auth'];
+            $this->saveOauthData($authData);
+            return;
+        }
         $code = $request['code'] ?? null;
         $serverDomain = $request['server_domain'] ?? 'oauth.bitrix.info';
         if ($code !== null) {
