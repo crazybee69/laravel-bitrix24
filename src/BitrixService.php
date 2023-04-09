@@ -18,11 +18,11 @@ use Symfony\Component\EventDispatcher\EventDispatcher;
 
 class BitrixService
 {
-    use OauthAuthorizable,
-        Deal,
-        Webhook,
-        SmartProcess,
-        BusinessProcess;
+    use BusinessProcess;
+    use Deal;
+    use OauthAuthorizable;
+    use SmartProcess;
+    use Webhook;
 
     private const OAUTH_DATA_CACHE_KEY = 'bitrix:oauth-data';
     private const TIMEOUT_BETWEEN_REQUESTS = 500000;
