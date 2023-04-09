@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Crazybee47\Laravel\Bitrix24;
 
 use Bitrix24\SDK\Core\Batch;
@@ -32,10 +34,12 @@ class BitrixService
 
     public function __construct(
         private readonly array $config,
-    )
-    {
+    ) {
         $this->eventDispatcher = new EventDispatcher();
-        $this->eventDispatcher->addListener(AuthTokenRenewedEvent::class, fn(AuthTokenRenewedEvent $event) => $this->onAccessTokenRenewed($event));
+        $this->eventDispatcher->addListener(
+            AuthTokenRenewedEvent::class,
+            fn(AuthTokenRenewedEvent $event) => $this->onAccessTokenRenewed($event)
+        );
     }
 
     /**
@@ -49,8 +53,7 @@ class BitrixService
         array $fields = [],
         array $additionalParams = [],
         ?string $resultKey = null
-    )
-    {
+    ) {
         $params = [
             'filter' => $filters,
             'start' => 0,

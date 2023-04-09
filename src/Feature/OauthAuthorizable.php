@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Crazybee47\Laravel\Bitrix24\Feature;
 
 use Bitrix24\SDK\Core\Credentials\AccessToken;
