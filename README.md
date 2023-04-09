@@ -23,13 +23,6 @@ class ExtendedBitrixService extends \Crazybee47\Laravel\Bitrix24\BitrixService {
 
 # Installation
 
-## Setup Bitrix24 Rest API Application
-
-- Путь вашего обработчика: `{APP_URL}/bitrix/oauth/callback`
-- Путь для первоначальной установки: `{APP_URL}/bitrix/install`
-  
-By default, authorization data is saved at the time of application installation. It is also possible to manually authorize specific Bitrix24 user into the application. To do this, you need to direct the user to the link: `{APP_URL}/bitrix/oauth/redirect`
-
 ## Configuration
 
 These credentials should be placed in your application's `config/services.php` configuration file:
@@ -41,6 +34,13 @@ These credentials should be placed in your application's `config/services.php` c
     'scopes' => explode(',', env('BITRIX_SCOPES', 'crm')),
 ]
 ```
+
+## Setup Bitrix24 Rest API Application
+
+- Путь вашего обработчика: `{APP_URL}/bitrix/oauth/callback`
+- Путь для первоначальной установки: `{APP_URL}/bitrix/install`
+  
+By default, authorization data is saved at the time of application installation. It is also possible to manually authorize specific Bitrix24 user into the application. To do this, you need to direct the user to the link: `{APP_URL}/bitrix/oauth/redirect`
 
 ## Setup App actions for Bitrix24
 
