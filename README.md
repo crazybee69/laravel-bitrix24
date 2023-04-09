@@ -1,5 +1,7 @@
 # Introduction
 
+Laravel wrapper around OAuth2 Bitrix24 Rest API for a quick start of a new application on Laravel + Bitrix24.
+
 There are few methods implemented in the library for interacting with the API, they will be added gradually.
 
 If you need more methods, you can extend BitrixService and make API requests using the `getApiClient` method, or `loadRecords` method for fetching all items from lists.
