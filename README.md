@@ -28,7 +28,7 @@ class ExtendedBitrixService extends \Crazybee47\Laravel\Bitrix24\BitrixService {
 - Путь вашего обработчика: `{APP_URL}/bitrix/oauth/callback`
 - Путь для первоначальной установки: `{APP_URL}/bitrix/install`
   
-By default, authorization data is saved at the time of application installation. It is also possible to manually install the application for a specific Bitrix24 user. To do this, you need to direct the user to the link: `{APP_URL}/bitrix/oauth/redirect`
+By default, authorization data is saved at the time of application installation. It is also possible to manually authorize specific Bitrix24 user into the application. To do this, you need to direct the user to the link: `{APP_URL}/bitrix/oauth/redirect`
 
 ## Configuration
 
