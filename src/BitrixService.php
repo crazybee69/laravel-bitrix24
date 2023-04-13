@@ -12,9 +12,9 @@ use Bitrix24\SDK\Events\AuthTokenRenewedEvent;
 use Bitrix24\SDK\Services\ServiceBuilder;
 use Crazybee47\Laravel\Bitrix24\Feature\BusinessProcess;
 use Crazybee47\Laravel\Bitrix24\Feature\Deal;
+use Crazybee47\Laravel\Bitrix24\Feature\Event;
 use Crazybee47\Laravel\Bitrix24\Feature\OauthAuthorizable;
 use Crazybee47\Laravel\Bitrix24\Feature\SmartProcess;
-use Crazybee47\Laravel\Bitrix24\Feature\Event;
 use Psr\Log\NullLogger;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 
@@ -35,7 +35,7 @@ class BitrixService
     public function __construct(
         private readonly array $config,
     ) {
-        $this->eventDispatcher = new EventDispatcher();
+        $this->eventDispatcher = app(EventDispatcher::class);
         $this->eventDispatcher->addListener(
             AuthTokenRenewedEvent::class,
             fn(AuthTokenRenewedEvent $event) => $this->onAccessTokenRenewed($event)
