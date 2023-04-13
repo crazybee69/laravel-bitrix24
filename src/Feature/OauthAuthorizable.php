@@ -48,7 +48,7 @@ trait OauthAuthorizable
 
     public function saveOauthData(array $oauthData): void
     {
-        Cache::put(self::OAUTH_DATA_CACHE_KEY, $oauthData, 86400);
+        Cache::forever(self::OAUTH_DATA_CACHE_KEY, $oauthData);
     }
 
     private function onAccessTokenRenewed(AuthTokenRenewedEvent $event): void
