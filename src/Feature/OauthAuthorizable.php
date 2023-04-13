@@ -6,6 +6,7 @@ namespace Crazybee47\Laravel\Bitrix24\Feature;
 
 use Bitrix24\SDK\Core\Credentials\AccessToken;
 use Bitrix24\SDK\Events\AuthTokenRenewedEvent;
+use Crazybee47\Laravel\Bitrix24\EventTypeEnum;
 use Crazybee47\Laravel\Bitrix24\Exception\UndefinedOauthDataException;
 use GuzzleHttp\Client;
 use GuzzleHttp\RequestOptions;
@@ -17,7 +18,7 @@ trait OauthAuthorizable
     public function authorizeRequest(array $request): void
     {
         $event = $request['event'] ?? null;
-        if ($event === self::ONAPPINSTALL_EVENT) {
+        if ($event === EventTypeEnum::OnAppInstall->value) {
             $authData = $request['auth'];
             $this->saveOauthData($authData);
             return;

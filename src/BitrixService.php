@@ -14,7 +14,7 @@ use Crazybee47\Laravel\Bitrix24\Feature\BusinessProcess;
 use Crazybee47\Laravel\Bitrix24\Feature\Deal;
 use Crazybee47\Laravel\Bitrix24\Feature\OauthAuthorizable;
 use Crazybee47\Laravel\Bitrix24\Feature\SmartProcess;
-use Crazybee47\Laravel\Bitrix24\Feature\Webhook;
+use Crazybee47\Laravel\Bitrix24\Feature\Event;
 use Psr\Log\NullLogger;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 
@@ -24,9 +24,8 @@ class BitrixService
     use Deal;
     use OauthAuthorizable;
     use SmartProcess;
-    use Webhook;
+    use Event;
 
-    private const ONAPPINSTALL_EVENT = 'ONAPPINSTALL';
     private const OAUTH_DATA_CACHE_KEY = 'bitrix:oauth-data';
     private const TIMEOUT_BETWEEN_REQUESTS = 500000;
 

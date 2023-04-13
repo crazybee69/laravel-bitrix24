@@ -52,7 +52,7 @@ If you need to install webhooks or application actions for Business Processes wh
 
 ```php
 protected $listen = [
-    \Crazybee47\Laravel\Bitrix24\Events\OnAppInstalled::class => [
+    \Crazybee47\Laravel\Bitrix24\Events\OnAppInstall::class => [
         'App\Listeners\RegisterBitrixWebhooks@handle'
     ],
 ];
