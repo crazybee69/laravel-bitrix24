@@ -31,7 +31,7 @@ trait BusinessProcess
         $this->getApiClient()->call('bizproc.activity.log', ['EVENT_TOKEN' => $eventToken, 'LOG_MESSAGE' => $message]);
     }
 
-    public function bizprocEventSend(string $eventToken, array $returnValues): void
+    public function bizprocEventSend(string $eventToken, array $returnValues = []): void
     {
         $this->getApiClient()->call('bizproc.event.send', ['EVENT_TOKEN' => $eventToken, 'RETURN_VALUES' => $returnValues]);
     }
