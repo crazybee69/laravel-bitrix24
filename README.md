@@ -37,6 +37,16 @@ These credentials should be placed in your application's `config/services.php` c
 ]
 ```
 
+Add the `bitrix/*` pattern to the list of VerifyCsrfToken middleware except list.
+```php
+class VerifyCsrfToken extends Middleware
+{
+    protected $except = [
+        'bitrix/*',
+    ];
+}
+```
+
 ## Setup Bitrix24 Rest API Application
 
 - Путь вашего обработчика: `{APP_URL}/bitrix/oauth/callback`
