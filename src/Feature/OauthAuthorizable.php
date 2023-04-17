@@ -57,8 +57,8 @@ trait OauthAuthorizable
         $token = $event->getRenewedToken()->getAccessToken();
         $oauthData = [
             'access_token' => $token->getAccessToken(),
-            'expires' => $token->getRefreshToken(),
-            'refresh_token' => $token->getExpires()
+            'expires' => $token->getExpires(),
+            'refresh_token' => $token->getRefreshToken()
         ];
         $cachedOauthData = Cache::get(self::OAUTH_DATA_CACHE_KEY);
         $oauthData = array_merge($cachedOauthData, $oauthData);
