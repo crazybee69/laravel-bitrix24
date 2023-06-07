@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\Bitrix\Webhook;
+namespace Crazybee47\Laravel\Bitrix24\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
