@@ -2,9 +2,7 @@
 
 namespace Crazybee47\Laravel\Bitrix24\Http\Requests;
 
-use Illuminate\Foundation\Http\FormRequest;
-
-class BusinessProcessActivityRequest extends FormRequest
+class BusinessProcessActivityRequest extends BusinessProcessRequest
 {
     /**
      * Get the validation rules that apply to the request.
@@ -14,7 +12,8 @@ class BusinessProcessActivityRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'event_token' => ['required', 'string']
+            'event_token' => ['required', 'string'],
+            ...parent::rules(),
         ];
     }
 
