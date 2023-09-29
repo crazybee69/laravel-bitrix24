@@ -49,8 +49,8 @@ class VerifyCsrfToken extends Middleware
 
 ## Setup Bitrix24 Rest API Application
 
-- Путь вашего обработчика: `{APP_URL}/bitrix/oauth/callback`
-- Путь для первоначальной установки: `{APP_URL}/bitrix/install`
+- Handler path: `{APP_URL}/bitrix/oauth/callback`
+- Install handler path: `{APP_URL}/bitrix/install`
   
 By default, authorization data is saved at the time of application installation. It is also possible to manually authorize specific Bitrix24 user into the application. To do this, you need to direct the user to the link: `{APP_URL}/bitrix/oauth/redirect`
 
