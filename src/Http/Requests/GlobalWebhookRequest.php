@@ -26,6 +26,6 @@ class GlobalWebhookRequest extends FormRequest
 
     public function getDataParamValue(string $key): ?string
     {
-        return $this->getData()[$key] ?? null;
+        return \Arr::get($this->getData(), $key);
     }
 }
