@@ -12,6 +12,7 @@ use GuzzleHttp\Client;
 use GuzzleHttp\RequestOptions;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Log;
 
 trait OauthAuthorizable
 {
@@ -19,10 +20,17 @@ trait OauthAuthorizable
     {
         $event = $request['event'] ?? null;
         if ($event === EventTypeEnum::OnAppInstall->value) {
+            $isSimpleAuth = Arr::has($request, 'AUTH_ID');
+            if ($isSimpleAuth) {
+                $redirectUrl = route('bitrix.oauth.redirect');
+                Log::warning("[BitrixService] Authorization error. Bitrix24 use simple auth. You must authorize by redirect url: {$redirectUrl}");
+                return;
+            }
             $authData = $request['auth'];
             $this->saveOauthData($authData);
             return;
         }
+
         $code = $request['code'] ?? null;
         $serverDomain = $request['server_domain'] ?? 'oauth.bitrix.info';
         if ($code !== null) {
