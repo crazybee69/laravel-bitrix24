@@ -55,9 +55,14 @@ trait OauthAuthorizable
         $this->saveOauthData($oauthData);
     }
 
-    public function saveOauthData(array $oauthData): void
+    protected function saveOauthData(array $oauthData): void
     {
         Cache::forever(self::OAUTH_DATA_CACHE_KEY, $oauthData);
+    }
+
+    protected function getCachedOauthData(): array
+    {
+        return Cache::get(self::OAUTH_DATA_CACHE_KEY);
     }
 
     private function onAccessTokenRenewed(AuthTokenRenewedEvent $event): void
@@ -68,7 +73,7 @@ trait OauthAuthorizable
             'expires' => $token->getExpires(),
             'refresh_token' => $token->getRefreshToken()
         ];
-        $cachedOauthData = Cache::get(self::OAUTH_DATA_CACHE_KEY);
+        $cachedOauthData = $this->getCachedOauthData();
         $oauthData = array_merge($cachedOauthData, $oauthData);
         $this->saveOauthData($oauthData);
     }
@@ -79,7 +84,7 @@ trait OauthAuthorizable
      */
     private function getCachedToken(): AccessToken
     {
-        $oauthData = Cache::get(self::OAUTH_DATA_CACHE_KEY);
+        $oauthData = $this->getCachedOauthData();
         if ($oauthData === null) {
             throw new UndefinedOauthDataException();
         }
