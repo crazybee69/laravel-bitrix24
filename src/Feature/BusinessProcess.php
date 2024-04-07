@@ -26,6 +26,11 @@ trait BusinessProcess
         $this->getApiClient()->call('bizproc.activity.delete', ['CODE' => $code]);
     }
 
+    public function bizprocActivityList(): array
+    {
+        return $this->loadRecords('bizproc.activity.list', []);
+    }
+
     public function bizprocActivityLog(string $eventToken, string $message): void
     {
         $this->getApiClient()->call('bizproc.activity.log', ['EVENT_TOKEN' => $eventToken, 'LOG_MESSAGE' => $message]);
