@@ -82,7 +82,7 @@ trait OauthAuthorizable
      * @return AccessToken
      * @throws UndefinedOauthDataException
      */
-    private function getCachedToken(): AccessToken
+    protected function getCachedToken(): AccessToken
     {
         $oauthData = $this->getCachedOauthData();
         if ($oauthData === null) {

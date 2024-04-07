@@ -29,11 +29,11 @@ class BitrixService
     private const OAUTH_DATA_CACHE_KEY = 'bitrix:oauth-data';
     private const TIMEOUT_BETWEEN_REQUESTS = 500000;
 
-    private readonly ?EventDispatcher $eventDispatcher;
+    protected readonly ?EventDispatcher $eventDispatcher;
     private ?ServiceBuilder $serviceBuilder = null;
 
     public function __construct(
-        private readonly array $config,
+        protected readonly array $config,
     ) {
         $this->eventDispatcher = app(EventDispatcher::class);
         $this->eventDispatcher->addListener(
