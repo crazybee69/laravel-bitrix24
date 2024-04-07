@@ -91,7 +91,7 @@ class BitrixService
         return $this->api()->getMainScope()->main()->core;
     }
 
-    private function api(): ServiceBuilder
+    protected function api(): ServiceBuilder
     {
         if ($this->serviceBuilder === null) {
             $appProfile = new \Bitrix24\SDK\Core\Credentials\ApplicationProfile(
