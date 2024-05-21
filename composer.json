@@ -1,13 +1,27 @@
 {
     "name": "crazybee47/laravel-bitrix24",
     "description": "Laravel wrapper around OAuth2 Bitrix24 Rest API Application",
+    "keywords": [
+        "Bitrix24",
+        "PHP",
+        "REST",
+        "API",
+        "Laravel"
+    ],
+    "homepage": "https://github.com/crazybee69/laravel-bitrix24",
+    "authors": [
+        {
+            "name": "Dmitrii Artemov",
+            "email": "dimochka1994@yandex.ru",
+            "homepage": "https://github.com/crazybee69"
+        }
+    ],
     "type": "library",
-    "version": "1.0.13",
     "license": "MIT",
     "require": {
-        "php": "^8.1",
+        "php": "^8.1|8.2|8.3",
         "guzzlehttp/guzzle": "^7.5",
-        "mesilov/bitrix24-php-sdk": "2.0-alpha.7",
+        "mesilov/bitrix24-php-sdk": "2.0-beta.2",
         "symfony/event-dispatcher": "^6.2|^7.0",
         "illuminate/contracts": "^9.0|^10.0|^11.0",
         "illuminate/http": "^9.0|^10.0|^11.0",
@@ -18,12 +32,6 @@
             "Crazybee47\\Laravel\\Bitrix24\\": "src/"
         }
     },
-    "authors": [
-        {
-            "name": "Dmitrii Artemov",
-            "email": "dimochka1994@yandex.ru"
-        }
-    ],
     "extra": {
         "branch-alias": {
             "dev-master": "1.x-dev"
